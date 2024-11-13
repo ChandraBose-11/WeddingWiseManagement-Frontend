@@ -45,16 +45,6 @@ const DashboardSidebar = () => {
               Profile
             </Sidebar.Item>
           </Link>
-          <Link to="/dashboard?tab=dashboardhome">
-            <Sidebar.Item
-              active={tab === "dashboardhome"}
-              icon={AiOutlineDashboard}
-              as="div"
-              className="hover:bg-neutral-200 transition duration-300 ease-in-out"
-            >
-              DashBoard
-            </Sidebar.Item>
-          </Link>
           <Sidebar.Item
             icon={HiArrowSmRight}
             className="cursor-pointer hover:bg-neutral-200 transition duration-300 ease-in-out"
