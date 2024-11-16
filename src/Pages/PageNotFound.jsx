@@ -8,6 +8,8 @@ const PageNotFound = () => {
         alt="Page Not Found"
         className=" w-2/5 h-2/3 mx-auto"
       />
+      
+      
     </div>
   );
 };

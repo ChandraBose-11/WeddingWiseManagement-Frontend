@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Sidebar } from "flowbite-react";
-import {
-  HiArrowSmRight,
- 
-  HiUser,
-
-} from "react-icons/hi";
+import { HiArrowSmRight, HiViewBoards, HiUser, HiMail } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signOutSuccess } from "../Redux/Slice/authSlice";
-import {  AiOutlineDashboard } from "react-icons/ai";
+import { FaCameraRetro} from "react-icons/fa6";
+import { IoFastFood } from "react-icons/io5";
+import { HiHomeModern } from "react-icons/hi2";
+import { GiPartyPopper } from "react-icons/gi";
+
 
 const DashboardSidebar = () => {
+  const { currentuser } = useSelector((state) => state.user);
   const location = useLocation();
   const dispatch = useDispatch();
   const [tab, setTab] = useState("");
@@ -37,7 +37,7 @@ const DashboardSidebar = () => {
             <Sidebar.Item
               active={tab === "profile"}
               icon={HiUser}
-              label={"User"}
+              label={currentuser.Admin ? "Admin" : "User"}
               labelColor="dark"
               as="div"
               className="hover:bg-neutral-200 transition duration-300 ease-in-out"
@@ -45,6 +45,80 @@ const DashboardSidebar = () => {
               Profile
             </Sidebar.Item>
           </Link>
+          {/* Publish */}
+          {currentuser.Admin && (
+            <Sidebar.Collapse icon={HiViewBoards} label="Published">
+              {currentuser.Admin && (
+                <Link to="/dashboard?tab=resort">
+                  <Sidebar.Item
+                    active={tab === "resort"}
+                    icon={HiHomeModern}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add Resort
+                  </Sidebar.Item>
+                </Link>
+              )}
+
+              {currentuser.Admin && (
+                <Link to="/dashboard?tab=catering">
+                  <Sidebar.Item
+                    active={tab === "catering"}
+                    icon={IoFastFood}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add Catering
+                  </Sidebar.Item>
+                </Link>
+              )}
+
+              {currentuser.Admin && (
+                <Link to="/dashboard?tab=photo">
+                  <Sidebar.Item
+                    active={tab === "photo"}
+                    icon={FaCameraRetro}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add Photography
+                  </Sidebar.Item>
+                </Link>
+              )}
+
+              {currentuser.Admin && (
+                <Link to="/dashboard?tab=decoration">
+                  <Sidebar.Item
+                    active={tab === "decoration"}
+                    icon={GiPartyPopper}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add Decoration
+                  </Sidebar.Item>
+                </Link>
+              )}
+              {currentuser.Admin && (
+                <Link to="/dashboard?tab=invitaion">
+                  <Sidebar.Item
+                    active={tab === "invitaion"}
+                    icon={HiMail}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add Invitation
+                  </Sidebar.Item>
+                </Link>
+              )}
+            </Sidebar.Collapse>
+          )}
+
           <Sidebar.Item
             icon={HiArrowSmRight}
             className="cursor-pointer hover:bg-neutral-200 transition duration-300 ease-in-out"

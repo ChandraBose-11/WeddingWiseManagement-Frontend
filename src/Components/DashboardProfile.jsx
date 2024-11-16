@@ -124,7 +124,7 @@ import {
           setUpdateUserSuccess("User Profile Updated Successfully");
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         dispatch(updateFailure(error.message));
         setUpdateUserError(error.message);
       }
@@ -237,6 +237,7 @@ import {
           >
             {loading ? "loading..." : "update"}
           </Button>
+          {}
         </form>
         <div className="text-red-600 flex justify-between mt-5">
           <span className="cursor-pointer" onClick={() => setShowModal(true)}>

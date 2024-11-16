@@ -49,27 +49,28 @@ const HomesPages = () => {
           <Link>
             <img
               className="rounded-t-lg p-5 w-80 ml-4"
-              src="https://i.pinimg.com/564x/c1/ba/68/c1ba6868e603d2f08de31468c3c3880c.jpg"
-              alt="WeddingVenue"
+              src="https://onehorizonproductions.com/wp-content/uploads/2022/08/nesara-1.jpg"
+              alt="WeddingResorts"
             />
           </Link>
           <div className="p-5">
             <Link>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Wedding Venue
+                Wedding-Resort
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A wedding is a ceremony where two people are united in marriage.
-              Wedding traditions and customs vary greatly between cultures. Most
-              wedding ceremonies involve an exchange of marriage vows by a
-              couple, presentation of a gift
+              Marriage resorts are popular wedding venues that offer a range of
+              services and amenities, including: All-inclusive packages These
+              can include ceremony and reception locations, food, lodging,
+              decor, and activities. Some resorts may also offer spas,
+              photography, and excursions
             </p>
             <Link
-              to="/weddingvenues"
+              to="/resort"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more about Wedding Venue
+              Read more
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
@@ -93,27 +94,26 @@ const HomesPages = () => {
           <Link>
             <img
               className="rounded-t-lg p-5 w-80 ml-4"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNHkjCRKa3pbcMQMjXXykWeZ7A7rxncBIv4c9NyX1HDVUg_tcL0rEck97bwHNhNheyK70&usqp=CAU"
-              alt="wedding Vendors"
+              src="https://onehorizonproductions.com/wp-content/uploads/2022/11/Wedding-caterers-in-bangalore-jpg.webp"
+              alt=" Wedding-Caterers"
             />
           </Link>
           <div className="p-5">
             <Link>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Wedding Vendors
+                Wedding-Caterers
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Wedding vendors are people or businesses that provide products or
-              services for a wedding, such as food, music, or a venue. Some
-              common wedding vendors include: Venue: The location of the
-              wedding, which can set the tone for the event.
+              Wedding catering is the service of food and other services for a
+              wedding reception and party. Wedding caterers can be hired
+              independently or as part of a package from the venue
             </p>
             <Link
-              to="/weddingVendors"
+              to="/catering"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more about Wedding Vendors
+              Read more
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
@@ -137,27 +137,27 @@ const HomesPages = () => {
           <Link>
             <img
               className="rounded-t-lg p-5 w-80 ml-4"
-              src="https://cdn0.weddingwire.in/vendor/1670/3_2/960/jpg/bridal-lehenga-auraya-fashion-lehenga-2_15_461670-170849299747877.webp"
-              alt="Bride"
+              src="https://images.squarespace-cdn.com/content/v1/549ed406e4b031a7658c3dc1/1461496193980-41STQXH1DDV9LINJLK7V/Wedding_Travellers_Destination_Wedding_Photography-230.jpg"
+              alt="photography"
             />
           </Link>
           <div className="p-5">
             <Link>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Bridal lehenga
+                Wedding-Photography
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              The lehenga, lehnga or langa or लेहंगा (also known as a ghagra,
-              chaniyo, Paro, paavada, or lacha) is a form of ankle-length skirt
-              from the Indian subcontinent. Different patterns and styles of
-              traditional embroidery are used to decorate lehenga.
+              Wedding photography is a type of photography that documents all
+              the activities and events related to a wedding, from the
+              preparations to the reception. The goal is to capture beautiful
+              moments and create lasting memories for the couple
             </p>
             <Link
-              to="/bride"
+              to="/photo"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more about Wedding Bridal
+              Read more
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
@@ -183,28 +183,26 @@ const HomesPages = () => {
           <Link>
             <img
               className="rounded-t-lg p-5 w-80 ml-4"
-              src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQOgFzPhkB6HzldxCV93zdPSo7urnkN2WjY04EobhmMJYnyu16W"
-              alt="Grooms"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh4_nHHOYG1TInaqr0sdtJiYoElz4X1WRAQQ&s"
+              alt="Decoration"
             />
           </Link>
           <div className="p-5">
             <Link>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Sherwani
+                Decoration
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A sherwani is a long, fitted, button-down coat that is worn by men
-              in South Asia. It is typically knee-length, has long sleeves, and
-              is often worn for festive occasions like weddings. Sherwanis are
-              usually made from fine fabrics like silk and can be embellished
-              with embroidery
+              Wedding decoration can set the tone and ambiance for a wedding,
+              and can help reflect the couple's personality and vision. Some
+              common elements of wedding decor include: Flowers
             </p>
             <Link
-              to="/groms"
+              to="/decoration"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more about Grooms
+              Read more
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"

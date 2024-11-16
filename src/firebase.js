@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey:import.meta.evn.VITE_FIREBASE_API_KEY,
+  apiKey:"AIzaSyA7gxfIvW6CHwJ-pHx_gaLtOWAZsjVgcv8",
   authDomain: "wedding-wise.firebaseapp.com",
   projectId: "wedding-wise",
   storageBucket: "wedding-wise.appspot.com",
