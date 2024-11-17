@@ -12,10 +12,11 @@ import Dashboard from "./Pages/Dashboard";
 import HomesPages from "./Pages/HomePages";
 import OnlyAdminPrivateRoute from "./Components/OnlyAdminPrivateRoute";
 import Resort from "./Pages/Resort";
-import EditResort from "./Pages/EditResort";
 import Catering from "./Pages/Catering";
 import Photography from "./Pages/Photography";
 import Makeup from "./Pages/Makeup";
+import DJ from "./Pages/DJ";
+import Decoration from "./Pages/Decoration";
 
 
 const App = () => {
@@ -39,11 +40,11 @@ const App = () => {
           <Route path="/create-decoration" element={<CreateDecoration/>}/> */}
         </Route>
         <Route path="/resort" element={<Resort />} />
-        <Route path="/resort/edit/:id" element={<EditResort />} />
         <Route path="/catering" element={<Catering />} />
         <Route path="/photo" element={<Photography />} />
         <Route path="/makeup" element={<Makeup/>}/>
-      
+        <Route path="/dj" element={<DJ/>}/>
+        <Route path="/decor" element={<Decoration/>}/>
       </Routes>
 
       <FooterComp />

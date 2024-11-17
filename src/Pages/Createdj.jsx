@@ -12,7 +12,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { HiInformationCircle } from "react-icons/hi";
 
-const CreatePhotography = () => {
+const Createdj = () => {
   const [file, setFile] = useState(null);
   const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
   const [imageFileUploadError, setImageFileUploadError] = useState(null);
@@ -20,7 +20,6 @@ const CreatePhotography = () => {
   const [publishError, setPublishError] = useState(null);
   const navigate = useNavigate();
 
-  //imageupload
   const handleUploadImage = async () => {
     try {
       if (!file) {
@@ -57,15 +56,12 @@ const CreatePhotography = () => {
       console.log(error);
     }
   };
-
-  //create post
-  const handleSubmit = async (e) => {
+  //create post 
+  const handleSubmit=async(e)=>{
     e.preventDefault();
     try {
-      //to convert html to content
-      // const strippedContent = formData.content.replace(/<[^>]+>/g,'');
       const response = await fetch(
-        "http://localhost:5000/api/photo/createphoto",
+        "http://localhost:5000/api/dj/createdj",
         {
           method: "POST",
           headers: {
@@ -74,61 +70,60 @@ const CreatePhotography = () => {
           },
           body: JSON.stringify(formData),
         }
-      );
+      )
       const data = await response.json();
       if (!response.ok) {
         setPublishError(data.message);
         return;
       } else {
         setPublishError(null);
-        navigate("/photo");
+        navigate("/dj");
       }
     } catch (error) {
       console.log(error);
       setPublishError("Something Went Wrong");
     }
-  };
-
+  }
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
-      <h1 className="text-center text-3xl my-7 font-semibold">Create a photography</h1>
+      <h1 className="text-center text-3xl my-7 font-semibold">Create a DJ</h1>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-        {/* photographyname */}
+        {/* djname */}
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyname"
+            placeholder="Enter the djname"
             required
-            id="photographyname"
+            id="djname"
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyname: e.target.value })
+              setFormData({ ...formData, djname: e.target.value })
             }
           />
         </div>
-        {/* photographylocation */}
+        {/* djlocation */}
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyLocation"
+            placeholder="Enter the djLocation"
             required
-            id="photographyLocation"
+            id="djLocation"
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyLocation: e.target.value })
+              setFormData({ ...formData, djLocation: e.target.value })
             }
           />
         </div>
-        {/* photographypricerange */}
+        {/* djpricerange */}
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyPriceRange "
+            placeholder="Enter the djPriceRange "
             required
-            id="photographyPriceRange"
+            id="djPriceRange"
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyPriceRange: e.target.value })
+              setFormData({ ...formData, djPriceRange: e.target.value })
             }
           />
         </div>
@@ -136,12 +131,12 @@ const CreatePhotography = () => {
           <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyDescription"
+            placeholder="Enter the djDescription"
             required
-            id="photographyDescription"
+            id="djDescription"
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyDescription: e.target.value })
+              setFormData({ ...formData, djDescription: e.target.value })
             }
           />
         </div>
@@ -198,4 +193,4 @@ const CreatePhotography = () => {
   );
 };
 
-export default CreatePhotography;
+export default Createdj;

@@ -70,7 +70,7 @@ const CreateResort = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            token: localStorage.getItem("Token"),
+            Authorization:localStorage.getItem('Token')
           },
           body: JSON.stringify(formData),
         }

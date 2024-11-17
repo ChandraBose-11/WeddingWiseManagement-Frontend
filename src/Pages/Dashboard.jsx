@@ -6,7 +6,8 @@ import CreateResort from "./CreateResort";
 import CreateCatering from "./CreateCatering";
 import CreatePhotography from "./CreatePhotography";
 import MakeupCreate from "./MakeupCreate";
-
+import Createdj from "./Createdj";
+import CreateDecoration from "./CreateDecoration";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -25,10 +26,11 @@ const Dashboard = () => {
       </div>
       {tab === "profile" && <DashboardProfile />}
       {tab === "resort" && <CreateResort />}
-      {tab === 'catering' && <CreateCatering/>}
-      {tab === 'photo' && <CreatePhotography/>}
-      {tab === 'makeupCreate' && <MakeupCreate/>}
-   
+      {tab === "catering" && <CreateCatering />}
+      {tab === "photo" && <CreatePhotography />}
+      {tab === "makeupCreate" && <MakeupCreate />}
+      {tab === "djCreate" && <Createdj />}
+      {tab === "decorCreate" && <CreateDecoration/>}
     </div>
   );
 };

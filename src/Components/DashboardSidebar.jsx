@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Sidebar } from "flowbite-react";
-import { HiArrowSmRight, HiViewBoards, HiUser, HiMail } from "react-icons/hi";
+import {
+  HiArrowSmRight,
+  HiViewBoards,
+  HiUser,
+} from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutSuccess } from "../Redux/Slice/authSlice";
@@ -8,6 +12,7 @@ import { FaCameraRetro } from "react-icons/fa6";
 import { IoFastFood } from "react-icons/io5";
 import { HiHomeModern } from "react-icons/hi2";
 import { FaMagic } from "react-icons/fa";
+import { GiBulb, GiMusicalNotes } from "react-icons/gi";
 
 const DashboardSidebar = () => {
   const { currentuser } = useSelector((state) => state.user);
@@ -98,6 +103,32 @@ const DashboardSidebar = () => {
                     className="hover:bg-neutral-200 transition duration-300 ease-in-out"
                   >
                     Add Makeup
+                  </Sidebar.Item>
+                </Link>
+              )}
+              {currentuser.Admin && (
+                <Link to="/dashboard?tab=djCreate">
+                  <Sidebar.Item
+                    active={tab === "djCreate"}
+                    icon={GiMusicalNotes}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add DJ
+                  </Sidebar.Item>
+                </Link>
+              )}
+                            {currentuser.Admin && (
+                <Link to="/dashboard?tab=decorCreate">
+                  <Sidebar.Item
+                    active={tab === "decorCreate"}
+                    icon={GiBulb}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add Decor
                   </Sidebar.Item>
                 </Link>
               )}

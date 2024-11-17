@@ -12,7 +12,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { HiInformationCircle } from "react-icons/hi";
 
-const CreatePhotography = () => {
+const CreateDecoration = () => {
   const [file, setFile] = useState(null);
   const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
   const [imageFileUploadError, setImageFileUploadError] = useState(null);
@@ -65,7 +65,7 @@ const CreatePhotography = () => {
       //to convert html to content
       // const strippedContent = formData.content.replace(/<[^>]+>/g,'');
       const response = await fetch(
-        "http://localhost:5000/api/photo/createphoto",
+        "http://localhost:5000/api/decor/createdecor",
         {
           method: "POST",
           headers: {
@@ -81,7 +81,7 @@ const CreatePhotography = () => {
         return;
       } else {
         setPublishError(null);
-        navigate("/photo");
+        navigate("/decor");
       }
     } catch (error) {
       console.log(error);
@@ -89,59 +89,59 @@ const CreatePhotography = () => {
     }
   };
 
-  return (
-    <div className="p-3 max-w-3xl mx-auto min-h-screen">
+    return (
+      <div className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold">Create a photography</h1>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-        {/* photographyname */}
+        {/* decorname */}
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyname"
+            placeholder="Enter the decorname"
             required
-            id="photographyname"
+            id="decorname" 
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyname: e.target.value })
+              setFormData({ ...formData, decorname: e.target.value })
             }
           />
         </div>
-        {/* photographylocation */}
+        {/* decorlocation */}
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyLocation"
+            placeholder="Enter the decorLocation"
             required
-            id="photographyLocation"
+            id="decorLocation"
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyLocation: e.target.value })
+              setFormData({ ...formData, decorLocation: e.target.value })
             }
           />
         </div>
-        {/* photographypricerange */}
+        {/* decorpricerange */}
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyPriceRange "
+            placeholder="Enter the decorPriceRange "
             required
-            id="photographyPriceRange"
+            id="decorPriceRange"
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyPriceRange: e.target.value })
+              setFormData({ ...formData, decorPriceRange: e.target.value })
             }
           />
         </div>
-          {/* photographydescription */}
+          {/* decordescription */}
           <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
-            placeholder="Enter the photographyDescription"
+            placeholder="Enter the decorDescription"
             required
-            id="photographyDescription"
+            id="decorDescription"
             className="flex-1"
             onChange={(e) =>
-              setFormData({ ...formData, photographyDescription: e.target.value })
+              setFormData({ ...formData, decorDescription: e.target.value })
             }
           />
         </div>
@@ -195,7 +195,7 @@ const CreatePhotography = () => {
         )}
       </form>
     </div>
-  );
+    );
 };
 
-export default CreatePhotography;
+export default CreateDecoration;

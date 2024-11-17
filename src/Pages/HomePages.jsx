@@ -233,17 +233,19 @@ const HomesPages = () => {
           <div className="p-5">
             <Link>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              BridalMakeup
+                BridalMakeup
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Bridal makeup is a type of makeup that's designed to enhance a bride's natural beauty and look great in photos and videos. It's different from regular makeup in a few ways
+              Bridal makeup is a type of makeup that's designed to enhance a
+              bride's natural beauty and look great in photos and videos. It's
+              different from regular makeup in a few ways
             </p>
             <Link
               to="/makeup"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more 
+              Read more
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
@@ -267,26 +269,27 @@ const HomesPages = () => {
           <Link>
             <img
               className="rounded-t-lg p-5 w-80 ml-4"
-              src="https://www.creatisimo.net/wp-content/uploads/2022/07/Simplicity-Engagement-Invitation.jpg"
-              alt="invitation"
+              src="https://static.vecteezy.com/system/resources/previews/026/794/666/non_2x/dj-playing-and-mixing-music-in-nightclub-party-at-night-edm-dance-music-club-with-crowd-of-young-people-free-photo.jpg"
+              alt="DJ"
             />
           </Link>
           <div className="p-5">
             <Link>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Wedding invitation
+                DJ [Disc Jockey]
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A wedding invitation is a letter asking the recipient to attend a
-              wedding. It is typically written in the formal, third-person
-              language and mailed five to eight weeks before the wedding date.
+              A person who plays recorded music for an audience. DJs often
+              perform at clubs, bars, or parties, and may use turntables, CDJs,
+              or a controller to play music from vinyl records, CDs, or digital
+              audio files
             </p>
             <Link
-              to="/invitation"
+              to="/dj"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more about Invitation
+              Read more
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
