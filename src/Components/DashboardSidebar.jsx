@@ -4,11 +4,10 @@ import { HiArrowSmRight, HiViewBoards, HiUser, HiMail } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutSuccess } from "../Redux/Slice/authSlice";
-import { FaCameraRetro} from "react-icons/fa6";
+import { FaCameraRetro } from "react-icons/fa6";
 import { IoFastFood } from "react-icons/io5";
 import { HiHomeModern } from "react-icons/hi2";
 import { GiPartyPopper } from "react-icons/gi";
-
 
 const DashboardSidebar = () => {
   const { currentuser } = useSelector((state) => state.user);
@@ -86,33 +85,6 @@ const DashboardSidebar = () => {
                     className="hover:bg-neutral-200 transition duration-300 ease-in-out"
                   >
                     Add Photography
-                  </Sidebar.Item>
-                </Link>
-              )}
-
-              {currentuser.Admin && (
-                <Link to="/dashboard?tab=decoration">
-                  <Sidebar.Item
-                    active={tab === "decoration"}
-                    icon={GiPartyPopper}
-                    labelColor="dark"
-                    as="div"
-                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
-                  >
-                    Add Decoration
-                  </Sidebar.Item>
-                </Link>
-              )}
-              {currentuser.Admin && (
-                <Link to="/dashboard?tab=invitaion">
-                  <Sidebar.Item
-                    active={tab === "invitaion"}
-                    icon={HiMail}
-                    labelColor="dark"
-                    as="div"
-                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
-                  >
-                    Add Invitation
                   </Sidebar.Item>
                 </Link>
               )}
