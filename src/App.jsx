@@ -15,6 +15,8 @@ import Resort from "./Pages/Resort";
 import EditResort from "./Pages/EditResort";
 import Catering from "./Pages/Catering";
 import Photography from "./Pages/Photography";
+import Makeup from "./Pages/Makeup";
+
 
 const App = () => {
   return (
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/resort/edit/:id" element={<EditResort />} />
         <Route path="/catering" element={<Catering />} />
         <Route path="/photo" element={<Photography />} />
+        <Route path="/makeup" element={<Makeup/>}/>
+      
       </Routes>
 
       <FooterComp />

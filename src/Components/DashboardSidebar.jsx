@@ -7,7 +7,7 @@ import { signOutSuccess } from "../Redux/Slice/authSlice";
 import { FaCameraRetro } from "react-icons/fa6";
 import { IoFastFood } from "react-icons/io5";
 import { HiHomeModern } from "react-icons/hi2";
-import { GiPartyPopper } from "react-icons/gi";
+import { FaMagic } from "react-icons/fa";
 
 const DashboardSidebar = () => {
   const { currentuser } = useSelector((state) => state.user);
@@ -85,6 +85,19 @@ const DashboardSidebar = () => {
                     className="hover:bg-neutral-200 transition duration-300 ease-in-out"
                   >
                     Add Photography
+                  </Sidebar.Item>
+                </Link>
+              )}
+              {currentuser.Admin && (
+                <Link to="/dashboard?tab=makeupCreate">
+                  <Sidebar.Item
+                    active={tab === "makeupCreate"}
+                    icon={FaMagic}
+                    labelColor="dark"
+                    as="div"
+                    className="hover:bg-neutral-200 transition duration-300 ease-in-out"
+                  >
+                    Add Makeup
                   </Sidebar.Item>
                 </Link>
               )}

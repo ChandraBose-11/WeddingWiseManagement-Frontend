@@ -5,6 +5,8 @@ import DashboardSidebar from "../Components/DashboardSidebar";
 import CreateResort from "./CreateResort";
 import CreateCatering from "./CreateCatering";
 import CreatePhotography from "./CreatePhotography";
+import MakeupCreate from "./MakeupCreate";
+
 
 const Dashboard = () => {
   const location = useLocation();
@@ -25,7 +27,8 @@ const Dashboard = () => {
       {tab === "resort" && <CreateResort />}
       {tab === 'catering' && <CreateCatering/>}
       {tab === 'photo' && <CreatePhotography/>}
-     
+      {tab === 'makeupCreate' && <MakeupCreate/>}
+   
     </div>
   );
 };

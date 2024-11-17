@@ -226,27 +226,24 @@ const HomesPages = () => {
           <Link>
             <img
               className="rounded-t-lg p-5 w-80 ml-4"
-              src="https://www.brides.com/thmb/CymhTzDmoYs4kckVRoaAHw4qAqo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/wedding-budget-guide-allocating-funds-staying-on-track_Final22-56876ddb855c4300810bfd9dd9294dad.png"
-              alt="budget"
+              src="https://images.shaadisaga.com/shaadisaga_production/photos/pictures/003/026/694/new_medium/82386551_184324886337901_9059549580107757233_n.jpg?1637746969"
+              alt="BridalMakeup"
             />
           </Link>
           <div className="p-5">
             <Link>
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Wedding Budget
+              BridalMakeup
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A wedding budget is a spreadsheet that tracks all wedding
-              expenses, and it's a starting point for the wedding planning
-              process. The budget can help you avoid debt and ensure you don't
-              waste money
+            Bridal makeup is a type of makeup that's designed to enhance a bride's natural beauty and look great in photos and videos. It's different from regular makeup in a few ways
             </p>
             <Link
-              to="/planningtool"
+              to="/makeup"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more about Wedding-PlanningTool
+              Read more 
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
