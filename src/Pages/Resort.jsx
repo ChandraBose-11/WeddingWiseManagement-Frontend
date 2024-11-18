@@ -135,26 +135,6 @@ const Resort = () => {
                     </Modal>
                   </span>
                 </div>
-                <div className="max-w-sm">
-                  <div className="mt-4 flex space-x-3 lg:mt-6">
-                    {currentuser.Admin && (
-                      <Link to={`/resort/edit/${ele._id}`}>
-                        <Button className="inline-flex items-center rounded-lg bg-cyan-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
-                          Edit Resort
-                        </Button>
-                      </Link>
-                    )}
-
-                    {currentuser.Admin && (
-                      <Button
-                        className="inline-flex items-center rounded-lg bg-cyan-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-red-00"
-                        onClick={handleDelete}
-                      >
-                        Delete Resort
-                      </Button>
-                    )}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
