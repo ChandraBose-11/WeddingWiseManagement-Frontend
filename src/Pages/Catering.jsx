@@ -2,7 +2,6 @@ import { Button, Modal, TextInput } from "flowbite-react";
 import React, { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { AiOutlineMail, AiOutlinePhone, AiOutlineUser } from "react-icons/ai";
 import { message } from "antd";
 import axios from "axios";
 const Catering = () => {
@@ -12,7 +11,7 @@ const Catering = () => {
   const NameInputRef = useRef(null);
   const [caterId, setCaterId] = useState();
   const [formdata, setFormData] = useState();
-  const [publishError, setPublishError] = useState(null);
+
   useEffect(() => {
     fetchData();
   });
@@ -25,20 +24,23 @@ const Catering = () => {
     // console.log(data);
   };
   const handleSubmit = async (e) => {
-   try {
-    
-    const response = await axios.post(`http://localhost:5000/api/catering/book/${caterId}`,formdata,{
-      headers:{
-        Authorization:localStorage.getItem('Token')
-      }
-    })
-    message.success(response.data.message)
-    setOpenModal(false)
-   } catch (error) {
-     message.error(error.response.data.message)
-     setOpenModal(false)
-   }
+    try {
+      const response = await axios.post(
+        `http://localhost:5000/api/catering/book/${caterId}`,
+        formdata,
+        {
+          headers: {
+            Authorization: localStorage.getItem("Token"),
+          },
+        }
+      );
+      message.success(response.data.message);
+      setOpenModal(false);
+    } catch (error) {
+      message.error(error.response.data.message);
+      setOpenModal(false);
     }
+  };
   const handleDelete = async () => {};
   const bookCater = (id) => {
     console.log(id);

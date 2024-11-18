@@ -21,26 +21,15 @@ const HomesPages = () => {
         </div>
 
         <div className="flex-col ml-2 flex-grow">
-          <h1 className="font-bold text-4xl mt-10 ml-4 md:p-2">
+          <h1 className="font-bold text-4xl mt-20 ml-4 md:p-2">
             Every Love Story Deserves a Beautiful Wedding....
           </h1>
           <br />
-          <h3 className="flex ml-5 font-semibold">
+          <h2 className="flex font-semibold ml-10">
             Perfect for an inspiration or wedding ideas section
-          </h3>
+          </h2>
 
           <br />
-          <form>
-            <TextInput
-              type="text"
-              placeholder="Find the magic in every detail..."
-              rightIcon={AiOutlineSearch}
-              className="w-80 mx-6"
-              value={searchteam}
-              onChange={(e) => setSearchteam(e.target.value)}
-            />
-            <br />
-          </form>
         </div>
       </div>
       <br />
@@ -199,7 +188,7 @@ const HomesPages = () => {
               common elements of wedding decor include: Flowers
             </p>
             <Link
-              to="/decoration"
+              to="/decor"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Read more
