@@ -7,7 +7,6 @@ import {
 import { Alert, Button, TextInput } from "flowbite-react";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { app } from "../firebase";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { HiInformationCircle } from "react-icons/hi";
@@ -22,8 +21,7 @@ import {
   deleteUserStart,
   deleteUserSuccess,
 } from "../Redux/Slice/authSlice";
-
-
+import { app } from "../firebase";
 const DashboardProfile = () => {
   const dispatch = useDispatch();
   const { currentuser, loading, error } = useSelector((state) => state.user);
@@ -107,7 +105,7 @@ const DashboardProfile = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        `https://weddingwisemanagement-backend.onrender.com/api/user/update/${currentuser._id}`,
+        `http://localhost:5000/api/user/update/${currentuser._id}`,
         {
           method: "PUT",
           headers: {
@@ -142,7 +140,7 @@ const DashboardProfile = () => {
     try {
       dispatch(deleteUserStart());
       const response = await fetch(
-        `https://weddingwisemanagement-backend.onrender.com/api/user/delete/${currentuser._id}`,
+        `http://localhost:5000/api/user/delete/${currentuser._id}`,
         {
           method: "DELETE",
           headers: {
