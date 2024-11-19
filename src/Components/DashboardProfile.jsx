@@ -7,6 +7,7 @@ import {
 import { Alert, Button, TextInput } from "flowbite-react";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { app } from "../firebase";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { HiInformationCircle } from "react-icons/hi";
@@ -21,7 +22,8 @@ import {
   deleteUserStart,
   deleteUserSuccess,
 } from "../Redux/Slice/authSlice";
-import { app } from "../firebase";
+
+
 const DashboardProfile = () => {
   const dispatch = useDispatch();
   const { currentuser, loading, error } = useSelector((state) => state.user);
@@ -44,7 +46,7 @@ const DashboardProfile = () => {
       setImageFileUrl(URL.createObjectURL(file));
     }
   };
-
+  
   //uploading process
   useEffect(() => {
     if (imageFile) {
@@ -110,7 +112,7 @@ const DashboardProfile = () => {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            Authorization: localStorage.getItem("Token"),
+            token: localStorage.getItem("Token"),
           },
           body: JSON.stringify(formData),
         }
@@ -124,7 +126,7 @@ const DashboardProfile = () => {
         setUpdateUserSuccess("User Profile Updated Successfully");
       }
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       dispatch(updateFailure(error.message));
       setUpdateUserError(error.message);
     }
@@ -145,7 +147,7 @@ const DashboardProfile = () => {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            Authorization: localStorage.getItem("Token"),
+            token: localStorage.getItem("Token"),
           },
         }
       );
@@ -232,12 +234,11 @@ const DashboardProfile = () => {
         />
         <Button
           type="submit"
-          gradientDuoTone="purpleToPink"
+          gradientDuoTone="cyanToBlue"
           disabled={loading || imageFileUploading}
         >
           {loading ? "loading..." : "update"}
         </Button>
-        {}
       </form>
       <div className="text-red-600 flex justify-between mt-5">
         <span className="cursor-pointer" onClick={() => setShowModal(true)}>
