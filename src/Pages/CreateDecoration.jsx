@@ -65,7 +65,7 @@ const CreateDecoration = () => {
       //to convert html to content
       // const strippedContent = formData.content.replace(/<[^>]+>/g,'');
       const response = await fetch(
-        "https://weddingwisemanagement-backend.onrender.com/api/decor/createdecor",
+        "http://localhost:5000/api/decor/createdecor",
         {
           method: "POST",
           headers: {

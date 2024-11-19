@@ -62,7 +62,7 @@ const MakeupCreate = () => {
     e.preventDefault();
     try {
         const response = await fetch (
-            "https://weddingwisemanagement-backend.onrender.com/api/makeup/createmakeup",
+            "http://localhost:5000/api/makeup/createmakeup",
             {
                 method: "POST",
                 headers: {

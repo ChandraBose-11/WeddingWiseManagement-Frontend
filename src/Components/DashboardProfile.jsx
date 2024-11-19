@@ -53,6 +53,7 @@ const DashboardProfile = () => {
       uploadImage();
     }
   }, [imageFile]);
+  
 
   //firbase image upload and storage part
   const uploadImage = async () => {
@@ -107,12 +108,12 @@ const DashboardProfile = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        `https://weddingwisemanagement-backend.onrender.com/api/user/update/${currentuser._id}`,
+        `http://localhost:5000/api/user/update/${currentuser._id}`,
         {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            token: localStorage.getItem("Token"),
+            Authorization: localStorage.getItem("Token"),
           },
           body: JSON.stringify(formData),
         }
@@ -142,7 +143,7 @@ const DashboardProfile = () => {
     try {
       dispatch(deleteUserStart());
       const response = await fetch(
-        `https://weddingwisemanagement-backend.onrender.com/api/user/delete/${currentuser._id}`,
+        `http://localhost:5000/api/user/delete/${currentuser._id}`,
         {
           method: "DELETE",
           headers: {

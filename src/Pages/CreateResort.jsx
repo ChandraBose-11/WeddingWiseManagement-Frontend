@@ -65,7 +65,7 @@ const CreateResort = () => {
       //to convert html to content
       // const strippedContent = formData.content.replace(/<[^>]+>/g,'');
       const response = await fetch(
-        "https://weddingwisemanagement-backend.onrender.com/api/resort/createresort",
+        "http://localhost:5000/api/resort/createresort",
         {
           method: "POST",
           headers: {

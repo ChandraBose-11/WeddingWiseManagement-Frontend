@@ -61,7 +61,7 @@ const Createdj = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://weddingwisemanagement-backend.onrender.com/api/dj/createdj",
+        "http://localhost:5000/api/dj/createdj",
         {
           method: "POST",
           headers: {

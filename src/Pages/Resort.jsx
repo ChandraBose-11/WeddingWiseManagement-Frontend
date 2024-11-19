@@ -15,7 +15,7 @@ const Resort = () => {
     fetchData();
   });
   const fetchData = async () => {
-    const response = await fetch("https://weddingwisemanagement-backend.onrender.com/api/resort/get");
+    const response = await fetch("http://localhost:5000/api/resort/get");
     const data = await response.json();
     setResort(data);
     // console.log(data);
@@ -24,7 +24,7 @@ const Resort = () => {
   const handleSubmit = async (e) => {
     try {
       const response = await axios.post(
-        `https://weddingwisemanagement-backend.onrender.com/api/resort/book/${resortId}`,
+        `http://localhost:5000/api/resort/book/${resortId}`,
         formdata,
         {
           headers: {
@@ -40,7 +40,7 @@ const Resort = () => {
     }
   };
 
-  const handleDelete = async () => {};
+ 
 
   const bookresort = (id) => {
     console.log(id);
