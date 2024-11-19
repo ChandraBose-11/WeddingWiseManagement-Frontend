@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey:"AIzaSyA7gxfIvW6CHwJ-pHx_gaLtOWAZsjVgcv8",
-  authDomain: "wedding-wise.firebaseapp.com",
+  authDomain: "incomparable-praline-614370.netlify.app",
   projectId: "wedding-wise",
   storageBucket: "wedding-wise.appspot.com",
   messagingSenderId: "144601244350",
