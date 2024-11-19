@@ -148,7 +148,7 @@ const DashboardProfile = () => {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            token: localStorage.getItem("Token"),
+            Authorization: localStorage.getItem("Token"),
           },
         }
       );
