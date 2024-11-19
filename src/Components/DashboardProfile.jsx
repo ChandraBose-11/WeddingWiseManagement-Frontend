@@ -22,7 +22,7 @@ import {
   deleteUserStart,
   deleteUserSuccess,
 } from "../Redux/Slice/authSlice";
-import { Link } from "react-router-dom";
+
 
 const DashboardProfile = () => {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const DashboardProfile = () => {
       setImageFileUrl(URL.createObjectURL(file));
     }
   };
-
+  
   //uploading process
   useEffect(() => {
     if (imageFile) {
@@ -107,7 +107,7 @@ const DashboardProfile = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        `http://localhost:5000/api/user/update/${currentuser.rest._id}`,
+        `https://weddingwisemanagement-backend.onrender.com/api/user/update/${currentuser._id}`,
         {
           method: "PUT",
           headers: {
@@ -126,6 +126,7 @@ const DashboardProfile = () => {
         setUpdateUserSuccess("User Profile Updated Successfully");
       }
     } catch (error) {
+      console.log(error);
       dispatch(updateFailure(error.message));
       setUpdateUserError(error.message);
     }
@@ -141,7 +142,7 @@ const DashboardProfile = () => {
     try {
       dispatch(deleteUserStart());
       const response = await fetch(
-        `http://localhost:5000/api/user/delete/${currentuser.rest._id}`,
+        `https://weddingwisemanagement-backend.onrender.com/api/user/delete/${currentuser._id}`,
         {
           method: "DELETE",
           headers: {
@@ -196,7 +197,7 @@ const DashboardProfile = () => {
             />
           )}
           <img
-            src={imageFileUrl || currentuser.rest.profilePicture}
+            src={imageFileUrl || currentuser.profilePicture}
             alt="user"
             className={`rounded-full w-full h-full object-cover border-8 border-[lightgray] ${
               imageFileUploadProgress &&
@@ -207,7 +208,7 @@ const DashboardProfile = () => {
         </div>
         {imageFileUploadError && (
           <Alert color="failure" icon={HiInformationCircle} className="mt-5">
-            <span className="font-medium me-2">🥴OOPS!</span>
+            <span className="font-medium me-2">⚠️ OOPS!</span>
             {imageFileUploadError}
           </Alert>
         )}
@@ -215,14 +216,14 @@ const DashboardProfile = () => {
           type="text"
           id="username"
           placeholder="UserName"
-          defaultValue={currentuser.rest.username}
+          defaultValue={currentuser.username}
           onChange={handleChange}
         />
         <TextInput
           type="email"
           id="email"
           placeholder="Email"
-          defaultValue={currentuser.rest.email}
+          defaultValue={currentuser.email}
           onChange={handleChange}
         />
         <TextInput
@@ -238,18 +239,6 @@ const DashboardProfile = () => {
         >
           {loading ? "loading..." : "update"}
         </Button>
-        {currentuser.rest.isAdmin && (
-          <Link to="/create-post">
-            <Button
-              type="submit"
-              gradientDuoTone="purpleToPink"
-              className="w-full"
-            >
-             
-              Create Post
-            </Button>
-          </Link>
-        )}
       </form>
       <div className="text-red-600 flex justify-between mt-5">
         <span className="cursor-pointer" onClick={() => setShowModal(true)}>
@@ -261,20 +250,14 @@ const DashboardProfile = () => {
       </div>
       {updateUserSuccess && (
         <Alert color="success" icon={HiInformationCircle} className="mt-5">
-          <span className="font-medium me-2">😎Yaaa!</span>
+          <span className="font-medium me-2">😊 Yaaa!</span>
           {updateUserSuccess}
         </Alert>
       )}
       {updateUserError && (
         <Alert color="failure" icon={HiInformationCircle} className="mt-5">
-          <span className="font-medium me-2">🥴OOPS!</span>
+          <span className="font-medium me-2">⚠️ OOPS!</span>
           {updateUserError}
-        </Alert>
-      )}
-      {error && (
-        <Alert color="failure" icon={HiInformationCircle} className="mt-5">
-          <span className="font-medium me-2">🥴OOPS!</span>
-          {error}
         </Alert>
       )}
       <Modal
