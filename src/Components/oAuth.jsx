@@ -34,7 +34,7 @@ const OAuth = () => {
         if(res.ok){
           localStorage.setItem("Token",data.token)
             dispatch(signinSuccess(user))
-            navigate('/')
+            navigate('/homepages')
             //console.log(user);
         }
       } catch (error) {
@@ -42,7 +42,7 @@ const OAuth = () => {
       }
    }
     return (
-       <Button type='button' gradientDuoTone="purpleToPink" onClick={handleSubmit} pill className='hover:scale-105'>
+       <Button type='button' gradientDuoTone="cyanToBlue" onClick={handleSubmit} pill className='hover:scale-105'>
         <AiFillGoogleCircle className='w-6 h-6 mr-2'/>
         Continue with Google
        </Button>
