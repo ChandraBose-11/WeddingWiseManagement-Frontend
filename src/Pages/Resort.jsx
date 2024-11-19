@@ -28,7 +28,7 @@ const Resort = () => {
         formdata,
         {
           headers: {
-            Authorization: localStorage.getItem("Token"),
+            Authorization:localStorage.getItem('Token')
           },
         }
       );
