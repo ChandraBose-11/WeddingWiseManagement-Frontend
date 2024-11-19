@@ -17,7 +17,7 @@ const Catering = () => {
   });
   const fetchData = async () => {
     const response = await fetch(
-      "http://localhost:5000/api/catering/getcratering"
+      "https://weddingwisemanagement-backend.onrender.com/api/catering/getcratering"
     );
     const data = await response.json();
     setCatering(data);
@@ -26,7 +26,7 @@ const Catering = () => {
   const handleSubmit = async (e) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/catering/book/${caterId}`,
+        `https://weddingwisemanagement-backend.onrender.com/api/catering/book/${caterId}`,
         formdata,
         {
           headers: {

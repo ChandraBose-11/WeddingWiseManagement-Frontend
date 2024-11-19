@@ -15,7 +15,7 @@ const DJ = () => {
         fetchData();
       });
       const fetchData = async () => {
-        const response = await fetch("http://localhost:5000/api/dj/getdj");
+        const response = await fetch("https://weddingwisemanagement-backend.onrender.com/api/dj/getdj");
         const data = await response.json();
         setDj(data);
         // console.log(data);
@@ -23,7 +23,7 @@ const DJ = () => {
       const handleSubmit = async (e) => {
         try {
           const response = await axios.post(
-            `http://localhost:5000/api/dj/book/${djId}`,
+            `https://weddingwisemanagement-backend.onrender.com/api/dj/book/${djId}`,
             formdata,
             {
               headers: {

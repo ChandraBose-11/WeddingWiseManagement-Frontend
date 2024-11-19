@@ -16,7 +16,7 @@ const Decoration = () => {
     fetchData();
   });
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/api/decor/getdecor");
+    const response = await fetch("https://weddingwisemanagement-backend.onrender.com/api/decor/getdecor");
     const data = await response.json();
     setDecor(data);
     // console.log(data);
@@ -24,7 +24,7 @@ const Decoration = () => {
   const handleSubmit = async (e) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/decor/book/${decorId}`,
+        `https://weddingwisemanagement-backend.onrender.com/api/decor/book/${decorId}`,
         formdata,
         {
           headers: {
