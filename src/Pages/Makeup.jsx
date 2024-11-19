@@ -16,7 +16,7 @@ const Makeup = () => {
     fetchData();
   });
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/api/makeup/getmakeup");
+    const response = await fetch("https://weddingwisemanagement-backend.onrender.com/api/makeup/getmakeup");
     const data = await response.json();
     setMakeup(data);
     // console.log(data);
@@ -24,7 +24,7 @@ const Makeup = () => {
   const handleSubmit = async (e) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/makeup/book/${makeupId}`,
+        `https://weddingwisemanagement-backend.onrender.com/api/makeup/book/${makeupId}`,
         formdata,
         {
           headers: {

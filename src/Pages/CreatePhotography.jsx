@@ -65,7 +65,7 @@ const CreatePhotography = () => {
       //to convert html to content
       // const strippedContent = formData.content.replace(/<[^>]+>/g,'');
       const response = await fetch(
-        "http://localhost:5000/api/photo/createphoto",
+        "https://weddingwisemanagement-backend.onrender.com/api/photo/createphoto",
         {
           method: "POST",
           headers: {

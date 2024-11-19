@@ -16,7 +16,7 @@ const Photography = () => {
         fetchData();
       });
       const fetchData = async () => {
-        const response = await fetch("http://localhost:5000/api/photo/get");
+        const response = await fetch("https://weddingwisemanagement-backend.onrender.com/api/photo/get");
         const data = await response.json();
         setPhotography(data);
         // console.log(data);
@@ -24,7 +24,7 @@ const Photography = () => {
       const handleSubmit = async (e) => {
         try {
           const response = await axios.post(
-            `http://localhost:5000/api/photo/book/${photoId}`,
+            `https://weddingwisemanagement-backend.onrender.com/api/photo/book/${photoId}`,
             formdata,
             {
               headers: {

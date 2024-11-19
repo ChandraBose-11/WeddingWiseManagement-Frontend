@@ -65,7 +65,7 @@ const CreateCatering = () => {
       //to convert html to content
       // const strippedContent = formData.content.replace(/<[^>]+>/g,'');
       const response = await fetch(
-        "http://localhost:5000/api/catering/createcatering",
+        "https://weddingwisemanagement-backend.onrender.com/api/catering/createcatering",
         {
           method: "POST",
           headers: {
