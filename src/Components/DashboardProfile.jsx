@@ -7,6 +7,7 @@ import {
 import { Alert, Button, TextInput } from "flowbite-react";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { app } from "../firebase";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { HiInformationCircle } from "react-icons/hi";
@@ -21,7 +22,8 @@ import {
   deleteUserStart,
   deleteUserSuccess,
 } from "../Redux/Slice/authSlice";
-import { app } from "../firebase";
+import { Link } from "react-router-dom";
+
 const DashboardProfile = () => {
   const dispatch = useDispatch();
   const { currentuser, loading, error } = useSelector((state) => state.user);
@@ -44,7 +46,7 @@ const DashboardProfile = () => {
       setImageFileUrl(URL.createObjectURL(file));
     }
   };
-  
+
   //uploading process
   useEffect(() => {
     if (imageFile) {
@@ -105,7 +107,7 @@ const DashboardProfile = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        `http://localhost:5000/api/user/update/${currentuser._id}`,
+        `http://localhost:5000/api/user/update/${currentuser.rest._id}`,
         {
           method: "PUT",
           headers: {
@@ -124,7 +126,6 @@ const DashboardProfile = () => {
         setUpdateUserSuccess("User Profile Updated Successfully");
       }
     } catch (error) {
-      console.log(error);
       dispatch(updateFailure(error.message));
       setUpdateUserError(error.message);
     }
@@ -140,7 +141,7 @@ const DashboardProfile = () => {
     try {
       dispatch(deleteUserStart());
       const response = await fetch(
-        `http://localhost:5000/api/user/delete/${currentuser._id}`,
+        `http://localhost:5000/api/user/delete/${currentuser.rest._id}`,
         {
           method: "DELETE",
           headers: {
@@ -195,7 +196,7 @@ const DashboardProfile = () => {
             />
           )}
           <img
-            src={imageFileUrl || currentuser.profilePicture}
+            src={imageFileUrl || currentuser.rest.profilePicture}
             alt="user"
             className={`rounded-full w-full h-full object-cover border-8 border-[lightgray] ${
               imageFileUploadProgress &&
@@ -206,7 +207,7 @@ const DashboardProfile = () => {
         </div>
         {imageFileUploadError && (
           <Alert color="failure" icon={HiInformationCircle} className="mt-5">
-            <span className="font-medium me-2">⚠️ OOPS!</span>
+            <span className="font-medium me-2">🥴OOPS!</span>
             {imageFileUploadError}
           </Alert>
         )}
@@ -214,14 +215,14 @@ const DashboardProfile = () => {
           type="text"
           id="username"
           placeholder="UserName"
-          defaultValue={currentuser.username}
+          defaultValue={currentuser.rest.username}
           onChange={handleChange}
         />
         <TextInput
           type="email"
           id="email"
           placeholder="Email"
-          defaultValue={currentuser.email}
+          defaultValue={currentuser.rest.email}
           onChange={handleChange}
         />
         <TextInput
@@ -237,6 +238,18 @@ const DashboardProfile = () => {
         >
           {loading ? "loading..." : "update"}
         </Button>
+        {currentuser.rest.isAdmin && (
+          <Link to="/create-post">
+            <Button
+              type="submit"
+              gradientDuoTone="purpleToPink"
+              className="w-full"
+            >
+             
+              Create Post
+            </Button>
+          </Link>
+        )}
       </form>
       <div className="text-red-600 flex justify-between mt-5">
         <span className="cursor-pointer" onClick={() => setShowModal(true)}>
@@ -248,14 +261,20 @@ const DashboardProfile = () => {
       </div>
       {updateUserSuccess && (
         <Alert color="success" icon={HiInformationCircle} className="mt-5">
-          <span className="font-medium me-2">😊 Yaaa!</span>
+          <span className="font-medium me-2">😎Yaaa!</span>
           {updateUserSuccess}
         </Alert>
       )}
       {updateUserError && (
         <Alert color="failure" icon={HiInformationCircle} className="mt-5">
-          <span className="font-medium me-2">⚠️ OOPS!</span>
+          <span className="font-medium me-2">🥴OOPS!</span>
           {updateUserError}
+        </Alert>
+      )}
+      {error && (
+        <Alert color="failure" icon={HiInformationCircle} className="mt-5">
+          <span className="font-medium me-2">🥴OOPS!</span>
+          {error}
         </Alert>
       )}
       <Modal

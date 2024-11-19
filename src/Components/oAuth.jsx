@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { app } from '../firebase';
 import { signinSuccess,signinFailure } from '../Redux/Slice/authSlice';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+
+
 const OAuth = () => {
     const auth = getAuth(app)
    const dispatch = useDispatch()
@@ -15,7 +17,7 @@ const OAuth = () => {
       provider.setCustomParameters({prompt:'select_account'})
       try {
         const result = await signInWithPopup(auth,provider)
-        const res = await fetch("http://localhost:5000/api/auth/google",{
+        const res = await fetch("/api/auth/google",{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -40,10 +42,11 @@ const OAuth = () => {
       }
    }
     return (
-       <Button type='button' gradientDuoTone="purpleToPink" onClick={handleSubmit} pill className='hover:scale-105'>
+       <Button type='button' gradientDuoTone="cyanToBlue" onClick={handleSubmit} pill className='hover:scale-105'>
         <AiFillGoogleCircle className='w-6 h-6 mr-2'/>
         Continue with Google
        </Button>
     );
 };
+
 export default OAuth;
