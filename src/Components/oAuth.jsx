@@ -34,7 +34,7 @@ const OAuth = () => {
         if(res.ok){
           localStorage.setItem("Token",data.token)
             dispatch(signinSuccess(user))
-            navigate('/')
+            navigate('/homepages')
             //console.log(user);
         }
       } catch (error) {
